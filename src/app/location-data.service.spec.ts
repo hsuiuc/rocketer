@@ -1,15 +1,15 @@
 /* tslint:disable:no-unused-variable */
 
 import {TestBed, inject} from '@angular/core/testing';
-import {TodoDataService} from './todo-data.service';
+import {LocationDataService} from './location-data.service';
 import { ApiService } from './api.service';
 import { ApiMockService } from './api-mock.service';
 
-describe('TodoDataService', () => {
+describe('LocationDataService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        TodoDataService,
+        LocationDataService,
         {
           provide: ApiService,
           useClass: ApiMockService
@@ -18,7 +18,7 @@ describe('TodoDataService', () => {
     });
   });
 
-  it('should ...', inject([TodoDataService], (service: TodoDataService) => {
+  it('should ...', inject([LocationDataService], (service: LocationDataService) => {
     expect(service).toBeTruthy();
   }));
 

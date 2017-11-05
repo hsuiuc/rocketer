@@ -3,7 +3,7 @@ import { TestBed, async } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NO_ERRORS_SCHEMA } from '@angular/core';
-import { TodoDataService } from './todo-data.service';
+import { LocationDataService } from './location-data.service';
 import { ApiService } from './api.service';
 import { ApiMockService } from './api-mock.service';
 
@@ -17,7 +17,7 @@ describe('AppComponent', () => {
         AppComponent
       ],
       providers: [
-        TodoDataService,
+        LocationDataService,
         {
           provide: ApiService,
           useClass: ApiMockService

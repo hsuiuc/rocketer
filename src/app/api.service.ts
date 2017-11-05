@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
 import { Http, Response } from '@angular/http';
-import { Todo } from './todo';
+import { Location } from './location';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
@@ -17,46 +17,46 @@ export class ApiService {
   ) {
   }
 
-  public getAllTodos(): Observable<Todo[]> {
+  public getAllLocations(): Observable<Location[]> {
     return this.http
-      .get(API_URL + '/todos')
+      .get(API_URL + '/locations')
       .map(response => {
-        const todos = response.json();
-        return todos.map((todo) => new Todo(todo));
+        const locations = response.json();
+        return locations.map((location) => new Location(location));
       })
       .catch(this.handleError);
   }
 
-  public createTodo(todo: Todo): Observable<Todo> {
+  public createLocation(location: Location): Observable<Location> {
     return this.http
-      .post(API_URL + '/todos', todo)
+      .post(API_URL + '/locations', location)
       .map(response => {
-        return new Todo(response.json());
+        return new Location(response.json());
       })
       .catch(this.handleError);
   }
 
-  public getTodoById(todoId: number): Observable<Todo> {
+  public getLocationById(locationId: number): Observable<Location> {
     return this.http
-      .get(API_URL + '/todos/' + todoId)
+      .get(API_URL + '/locations/' + locationId)
       .map(response => {
-        return new Todo(response.json());
+        return new Location(response.json());
       })
       .catch(this.handleError);
   }
 
-  public updateTodo(todo: Todo): Observable<Todo> {
+  public updateLocation(location: Location): Observable<Location> {
     return this.http
-      .put(API_URL + '/todos/' + todo.id, todo)
+      .put(API_URL + '/locations/' + location.id, location)
       .map(response => {
-        return new Todo(response.json());
+        return new Location(response.json());
       })
       .catch(this.handleError);
   }
 
-  public deleteTodoById(todoId: number): Observable<null> {
+  public deleteLocationById(locationId: number): Observable<null> {
     return this.http
-      .delete(API_URL + '/todos/' + todoId)
+      .delete(API_URL + '/locations/' + locationId)
       .map(response => null)
       .catch(this.handleError);
   }

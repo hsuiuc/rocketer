@@ -4,27 +4,28 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { TodoListComponent } from './todo-list/todo-list.component';
-import { TodoListFooterComponent } from './todo-list-footer/todo-list-footer.component';
-import { TodoListHeaderComponent } from './todo-list-header/todo-list-header.component';
-import { TodoDataService } from './todo-data.service';
-import { TodoListItemComponent } from './todo-list-item/todo-list-item.component';
+import { LocationListComponent } from './location-list/location-list.component';
+import { LocationListFooterComponent } from './location-list-footer/location-list-footer.component';
+import { LocationListHeaderComponent } from './location-list-header/location-list-header.component';
+import { LocationDataService } from './location-data.service';
+import { LocationListItemComponent } from './location-list-item/location-list-item.component';
 import { ApiService } from './api.service';
+import { ApiMockService } from './api-mock.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TodoListComponent,
-    TodoListFooterComponent,
-    TodoListHeaderComponent,
-    TodoListItemComponent
+    LocationListComponent,
+    LocationListFooterComponent,
+    LocationListHeaderComponent,
+    LocationListItemComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule
   ],
-  providers: [TodoDataService, ApiService],
+  providers: [LocationDataService, ApiMockService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

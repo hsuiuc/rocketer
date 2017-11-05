@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Todo } from './todo';
+import { Location } from './location';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 
@@ -10,31 +10,31 @@ export class ApiMockService {
   ) {
   }
 
-  public getAllTodos(): Observable<Todo[]> {
+  public getAllLocations(): Observable<Location[]> {
     return Observable.of([
-      new Todo({id: 1, title: 'Read article', complete: false})
+      new Location({id: 1, address: 'Sieble Center', hidden: false})
     ]);
   }
 
-  public createTodo(todo: Todo): Observable<Todo> {
+  public createLocation(location: Location): Observable<Location> {
     return Observable.of(
-      new Todo({id: 1, title: 'Read article', complete: false})
+      new Location({id: 1, address: 'Sieble Center', hidden: false})
     );
   }
 
-  public getTodoById(todoId: number): Observable<Todo> {
+  public getLocationById(locationId: number): Observable<Location> {
     return Observable.of(
-      new Todo({id: 1, title: 'Read article', complete: false})
+      new Location({id: 1, address: 'Sieble Center', hidden: false})
     );
   }
 
-  public updateTodo(todo: Todo): Observable<Todo> {
+  public updateLocation(location: Location): Observable<Location> {
     return Observable.of(
-      new Todo({id: 1, title: 'Read article', complete: false})
+      new Location({id: 1, address: 'Sieble Center', hidden: false})
     );
   }
 
-  public deleteTodoById(todoId: number): Observable<null> {
+  public deleteLocationById(locationId: number): Observable<null> {
     return null;
   }
 }

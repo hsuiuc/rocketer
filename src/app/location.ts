@@ -1,7 +1,7 @@
-export class Todo {
+export class Location {
   id: number;
-  title = '';
-  complete = false;
+  address = '';
+  hidden = false;
 
   constructor(values: Object = {}) {
     Object.assign(this, values);

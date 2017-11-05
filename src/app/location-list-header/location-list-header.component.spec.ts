@@ -3,25 +3,25 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { TodoListHeaderComponent } from './todo-list-header.component';
+import { LocationListHeaderComponent } from './location-list-header.component';
 import { FormsModule } from '@angular/forms';
 
-describe('TodoListHeaderComponent', () => {
-  let component: TodoListHeaderComponent;
-  let fixture: ComponentFixture<TodoListHeaderComponent>;
+describe('LocationListHeaderComponent', () => {
+  let component: LocationListHeaderComponent;
+  let fixture: ComponentFixture<LocationListHeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [
         FormsModule
       ],
-      declarations: [ TodoListHeaderComponent ]
+      declarations: [ LocationListHeaderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TodoListHeaderComponent);
+    fixture = TestBed.createComponent(LocationListHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

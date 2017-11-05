@@ -1,0 +1,5 @@
+<div class="view">
+  <input class="toggle" type="checkbox" (click)="toggleLocationComplete(location)" [checked]="location.hidden">
+  <label>{{location.address}}</label>
+  <button class="destroy" (click)="removeLocation(location)"></button>
+</div>

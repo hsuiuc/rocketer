@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "todo-app"
+    "name": "location-app"
   },
   "apps": [
     {
@@ -19,8 +19,8 @@
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
       "styles": [
-        "assets/css/todomvc-common.css",
-        "assets/css/todomvc-app.css",
+        "assets/css/locationmvc-common.css",
+        "assets/css/locationmvc-app.css",
         "styles.css"
       ],
       "scripts": [],

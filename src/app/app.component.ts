@@ -1,58 +1,58 @@
 import { Component, OnInit } from '@angular/core';
-import { TodoDataService } from './todo-data.service';
-import { Todo } from './todo';
+import { LocationDataService } from './location-data.service';
+import { Location } from './location';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [TodoDataService]
+  providers: [LocationDataService]
 })
 export class AppComponent implements OnInit {
 
-  todos: Todo[] = [];
+  locations: Location[] = [];
 
   constructor(
-    private todoDataService: TodoDataService
+    private locationDataService: LocationDataService
   ) {
   }
 
   public ngOnInit() {
-    this.todoDataService
-      .getAllTodos()
+    this.locationDataService
+      .getAllLocations()
       .subscribe(
-        (todos) => {
-          this.todos = todos;
+        (locations) => {
+          this.locations = locations;
         }
       );
   }
 
-  onAddTodo(todo) {
-    this.todoDataService
-      .addTodo(todo)
+  onAddLocation(location) {
+    this.locationDataService
+      .addLocation(location)
       .subscribe(
-        (newTodo) => {
-          this.todos = this.todos.concat(newTodo);
+        (newLocation) => {
+          this.locations = this.locations.concat(newLocation);
         }
       );
   }
 
-  onToggleTodoComplete(todo) {
-    this.todoDataService
-      .toggleTodoComplete(todo)
+  onToggleLocationHidden(location) {
+    this.locationDataService
+      .toggleLocationHidden(location)
       .subscribe(
-        (updatedTodo) => {
-          todo = updatedTodo;
+        (updatedLocation) => {
+          location = updatedLocation;
         }
       );
   }
 
-  onRemoveTodo(todo) {
-    this.todoDataService
-      .deleteTodoById(todo.id)
+  onRemoveLocation(location) {
+    this.locationDataService
+      .deleteLocationById(location.id)
       .subscribe(
         (_) => {
-          this.todos = this.todos.filter((t) => t.id !== todo.id);
+          this.locations = this.locations.filter((t) => t.id !== location.id);
         }
       );
   }

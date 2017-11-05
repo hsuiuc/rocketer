@@ -3,16 +3,16 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 
-import { TodoListComponent } from './todo-list.component';
-import { Todo } from '../todo';
+import { LocationListComponent } from './location-list.component';
+import { Location } from '../location';
 
-describe('TodoListComponent', () => {
-  let component: TodoListComponent;
-  let fixture: ComponentFixture<TodoListComponent>;
+describe('LocationListComponent', () => {
+  let component: LocationListComponent;
+  let fixture: ComponentFixture<LocationListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoListComponent ],
+      declarations: [ LocationListComponent ],
       schemas: [
         NO_ERRORS_SCHEMA
       ]
@@ -21,10 +21,10 @@ describe('TodoListComponent', () => {
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TodoListComponent);
+    fixture = TestBed.createComponent(LocationListComponent);
     component = fixture.componentInstance;
-    component.todos = [
-     new Todo({ id: 1, title: 'Test', complete: false })
+    component.locations = [
+     new Location({ id: 1, address: 'Test', hidden: false })
     ];
     fixture.detectChanges();
   });

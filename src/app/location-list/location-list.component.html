@@ -1,0 +1,10 @@
+<section class="main" *ngIf="locations.length > 0">
+  <ul class="location-list">
+    <li *ngFor="let location of locations" [class.completed]="location.hidden">
+      <app-location-list-item
+        [location]="location"
+        (toggleHidden)="onToggleLocationComplete($event)"
+        (remove)="onRemoveLocation($event)"></app-location-list-item>
+    </li>
+  </ul>
+</section>
